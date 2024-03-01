@@ -5,9 +5,9 @@ export default function linkContainer() {
     const socials = ["Github", "Codeberg", "LinkedIn"];
     const links = ["https://github.com/Miikatu", "https://codeberg.org/Miikatti/", "https://www.linkedin.com/in/miika-turja-6703152b0/"]
     const image =
-        ["../../assets/pictures/github-mark.svg",
-            "../../assets/pictures/codeberg-logo_icon_white.svg",
-            "../../assets/pictures/LinkedIn_icon.svg"]
+        ["assets/pictures/github-mark.svg",
+            "assets/pictures/codeberg-logo_icon_white.svg",
+            "assets/pictures/LinkedIn_icon.svg"]
 
     const color_bg = ["bg-white", "bg-cyan-500", "bg-black"]
     const theme = [
