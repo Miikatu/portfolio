@@ -16,7 +16,7 @@ export default function cardContainer(props) {
     });
 
     return (
-        <div className="justify-center flex flex-wrap gap-4">
+        <div className="justify-center bg-white  pb-12 flex flex-wrap gap-4">
             {listItems}
         </div>
     )

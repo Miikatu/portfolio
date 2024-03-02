@@ -21,10 +21,10 @@ const software = ["Power Bi", "Microsoft 365", "LibreOffice"];
 const skills = [programming, frontEnd, database, software]
 export default function RootLayout() {
   return (
-    <html className="scroll-smooth font-mono" lang="en">
+    <html className="scroll-smooth  font-mono" lang="en">
       <body>
         <div >
-          <div>
+          <div classname="bg-red-100">
             <Navbar />
             <Welcome />
             <Skills title="Skills" items={skills} />

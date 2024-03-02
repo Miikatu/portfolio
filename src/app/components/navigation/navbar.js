@@ -3,7 +3,7 @@ import NavButton from "./navButton"
 
 export default function Navbar() {
   return (
-    <div className="mt-auto  top-0 z-50 sticky">
+    <div className="mt-auto top-0 z-50 sticky">
       <div className="bg-black rounded ">
         <div className="grid grid-cols-5 py-10 rounded -translate-x-4 -translate-y-4 bg-white">
           <div className="col-start-2 col-span-5 flex ">

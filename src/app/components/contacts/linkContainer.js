@@ -32,7 +32,7 @@ export default function linkContainer() {
         );
     });
     return (
-        <div id="cards" className="p-10 h-full">
+        <div id="cards" className="p-10 bg-white h-full">
             <div className="bg-black  relative rounded ">
                 <div id="box-violet" className="  pl-10 pt-5 pb-20 space-y-10 space-x-2 rounded -translate-x-4 -translate-y-4 bg-white">
                     <div id="social" className="flex flex-wrap justify-center gap-2">

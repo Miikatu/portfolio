@@ -13,7 +13,7 @@ export default function skills(props) {
         });
     
     return (
-        <div id="cards" className="p-5 justify-center ">
+        <div id="cards" className="p-5 bg-white justify-center ">
                 <h1 className="justify-center flex text-3xl text-black">{props.title}</h1>
                 <div className="justify-center flex flex-wrap">
                    {listItems}
