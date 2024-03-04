@@ -7,7 +7,7 @@ export default function skills(props) {
         return(
             <div className=" flex flex-wrap gap">
                 {number.map((item,j)=>
-                <div  className={`first-letter:flex-2 ${color[i]} ${color_shadow[i]}  text-black rounded-md my-5 mr-5 px-5 w-fit shadow-lg`}>{item}</div>)}
+                <div className={`first-letter:flex-2 ${color[i]} ${color_shadow[i]}  text-white rounded-md my-5 mr-5 px-5 w-fit shadow-lg`}>{item}</div>)}
             </div>
         )
         });
