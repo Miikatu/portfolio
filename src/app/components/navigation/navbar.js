@@ -11,11 +11,12 @@ export default function Navbar() {
               <span className="text-black font-serif text-4xl">My portfolio</span>
               <span className="animate-pulse text-black fol-bold text-2xl">| By Miikatti</span>
             </div>
-            <div className="mr-auto my-auto md:space-x-5 lg:space-x-14">
+            <div className="mr-auto flex flex-wrap my-auto md:space-x-5 lg:space-x-14">
               <NavButton target="" field="About"/>
               <NavButton target="cards" field="Projects"/>
               <NavButton target="social" field="Contacts"/>
-            </div>
+           	
+			</div>
           </div>
         </div>
       </div>

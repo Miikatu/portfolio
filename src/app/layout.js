@@ -24,7 +24,7 @@ export default function RootLayout() {
     <html className="scroll-smooth  font-mono" lang="en">
       <body>
         <div >
-          <div classname="bg-red-100">
+          <div>
             <Navbar />
             <Welcome />
             <Skills title="Skills" items={skills} />

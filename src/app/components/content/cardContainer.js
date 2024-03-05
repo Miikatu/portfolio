@@ -11,12 +11,12 @@ export default function cardContainer(props) {
     ]
     const listItems = items.map((item, i) => {
         return(
-            <ItemCard className="" tite={item} path={path[i]}/>
+            <ItemCard className="text-black" title={item} path={path[i]}/>
         )
     });
 
     return (
-        <div className="justify-center bg-white  flex flex-wrap gap-4">
+        <div className="justify-center bg-white flex flex-wrap gap-4">
             {listItems}
         </div>
     )
