@@ -4,7 +4,7 @@ import ItemCard from "./itemCard";
 export default function cardContainer(props) {
     const items = ["Weather App", "TaskiMatti", "Grid Snake", "Serveriry.fi"];
     const path=[
-        "assets/pictures/TaskiMatti.png",
+        "assets/pictures/WeatherAppCardLogo.png",
         "assets/pictures/TaskiMatti.png",
         "assets/pictures/GridSnakeCard.png",
         "assets/pictures/ServeriRyCard.png"
