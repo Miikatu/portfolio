@@ -14,7 +14,7 @@ export default function linkContainer(footer: Footer) {
         <div className="flex flex-wrap">
           <a href={`${item.contactLink.href}`}>
             <div
-              className={`flex flex-wrap rounded-3xl transition-all hover:scale-125 shadow-lg px-6 py-5 pt-6 text-3xl my-5 md:my-24 font-bold`}
+              className={`flex flex-wrap rounded-3xl transition-all hover:scale-125 shadow-lg px-6 py-5 pt-6 text-3xl my-24 font-bold`}
               style={style}
             >
               {item.contactLink.text}

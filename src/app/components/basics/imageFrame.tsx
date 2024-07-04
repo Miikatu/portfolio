@@ -9,7 +9,7 @@ export default function ImageFrame(props: any) {
       <Image
         alt="alt"
         src={props.path}
-        className="rounded-md"
+        className=" "
         width={500}
         height={500}
       />

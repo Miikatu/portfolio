@@ -1,4 +1,4 @@
-export default function noteBox() {
+export default function noteBox(props: { cards: Card[] }) {
   return (
     <>
       <div id="cards" className="p-10 h-full">

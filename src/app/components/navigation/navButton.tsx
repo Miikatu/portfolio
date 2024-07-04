@@ -1,4 +1,4 @@
-export default function navButton(props: {target:string, field:string}) {
+export default function navButton(props: any) {
   return (
     <a
       className="hover:bg-slate-200

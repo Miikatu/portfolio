@@ -1,20 +1,26 @@
-import type { Component, Skills } from "@/types";
+import theme from "./styles.module.css";
 
-export default function skills(props: { skills: Skills }) {
-  const skills = props.skills;
-  console.log("**: ", props.skills);
-  const listItems =
-    skills.skillItems.map((skill, i: number) => {
-      return (
-        <div key={skill._key} className={`flex flex-wrap gap animate-[hop_1s_ease-in-out]`}>
-          <div
-            className={`flex bg-[#e6e8f1] py-4 px-2 rounded-3xl my-5 mr-5  text-blue-950 text-md`}
-          >
-            {skill.skillName || "Error"}
-          </div>
+export default function skills(skills: JSON) {
+  const { items } = skills;
+  //const color = ["bg-red-500", "bg-yellow-500", "bg-cyan-500", "bg-green-500"];
+  /*const color_shadow = [
+    "shadow-red-500/50",
+    "shadow-yellow-500/50",
+    "shadow-cyan-500/50",
+    "shadow-green-500/50",
+  ];*/
+  console.log(theme);
+  const listItems = items.map((item: any, i: any) => {
+    return (
+      <div className=" flex flex-wrap gap">
+        <div
+          className={`flex bg-[#e6e8f1] py-4 px-2 rounded-3xl  my-5 mr-5  text-blue-950 text-md`}
+        >
+          {item.skillName || "Error"}
         </div>
-      );
-    }) || "Error";
+      </div>
+    );
+  });
 
   return (
     <section>

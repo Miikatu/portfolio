@@ -8,10 +8,7 @@ export default function Footer(props: { footer: Footer; theme: Theme }) {
 
   return (
     <footer className="mb-0">
-      <div
-        id="social"
-        className="flex flex-wrap mb-0 justify-center md:gap-2  "
-      >
+      <div id="social" className="flex flex-wrap mb-0 justify-center gap-2 ">
         <LinkContainer {...footer} />
       </div>
       <div className="rotate-180">
