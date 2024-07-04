@@ -8,6 +8,65 @@ module.exports = {
   ],
   theme: {
     extend: {
+
+      animation: {
+        blob: "blob 7s infinite",
+        bubble: "bubble 1s infinite",
+        shine: "shine 3s infinite",
+        hop: "hop 1s ease-in-out"
+      },
+      keyframes: {
+        blob: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -50px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9)",
+          },
+          "100%": {
+            transform: "tranlate(0px, 0px) scale(1)",
+          },
+        },
+
+        bubble: {
+          "0%": {
+            transform: "skewY(1deg) scale(1)",
+          },
+          "33%": {
+            transform: "skewY(2deg) scale(1.1)",
+          },
+          "66%": {
+            transform: "skewY(3deg) scale(1.1)",
+          },
+          "100%": {
+            transform: "skewY(1deg) scale(1)",
+          },
+        },
+        hop: {
+          "0%": {
+            transform: "translateY(-25%)",
+            animate: "cubic-bezier(0.8, 0, 1, 1)"
+          },
+          "50%": {
+            transform: "translateY(0)",
+            animate: "cubic-bezier(0, 0, 0.2, 1)"
+          }
+        },
+        shine: {
+          "20%": {
+            transform: "translateX(-5%) skewY(-2deg) scale(1.05);",
+          },
+          "50%": {
+            transform: "translateX(0%) skewY(4deg) scale(1.05);",
+            
+          },
+        }
+      },
+    
+
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

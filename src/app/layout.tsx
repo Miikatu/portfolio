@@ -9,7 +9,6 @@ import { getContent } from "@/sanity/client";
 import { SanityDocument } from "next-sanity";
 import { sanityFetch } from "@/sanity/client";
 import Link from "next/link";
-import theme from "src/app/styles.module.css";
 
 import type { Layout, Component, Footer as FooterType } from "@/types";
 export const metadata = {
@@ -72,8 +71,6 @@ export default async function RootLayout() {
   const { theme } = style[0];
   const { skills, cards } = components[0];
 
-  console.log(theme.themeLabel);
-
   return (
     <html className={`scroll-smooth bg-[#f0f1fa] font-mono`} lang="en">
       <body>
@@ -81,8 +78,8 @@ export default async function RootLayout() {
           <div>
             <Navbar {...navbar} />
             <Welcome {...hero} />
-            <Skills title="Skills" items={skills} />
-            <CardContainer className="" cards={cards} />
+            <Skills skills={skills} />
+            <CardContainer cards={cards} />
             <Footer footer={footer} theme={theme} />
           </div>
         </div>

@@ -2,24 +2,27 @@ import ImageFrame from "../basics/imageFrame";
 import ItemDescription from "./itemDescription";
 import ItemCard from "./itemCard";
 import type { Card, Component } from "@/types";
-import theme from "./styles.module.css";
 
 export default function cardContainer(props: { cards: Card[] }) {
   //console.log("CARDS: ", cards.items[0].thumbnail);
+  //bg-[#2b2e3a]
   const cards = props.cards;
-  console.log(cards);
+
   const listItems = cards.map((card, i: Number) => {
-    return <ItemCard className="" title={card.title} path={card.url} />;
+    return <ItemCard title={card.title} path={card.url} update={""} />;
   });
+  const style = {
+    background: `radial-gradient(ellipse at top, #141619, transparent), radial-gradient(ellipse at bottom, #2b2e3a, transparent)`,
+  };
   return (
     <>
       <div
-        className={`overflow-auto bg-[#2b2e3a] rounded-3xl md:mx-16 mx-5 justify-center flex flex-wrap gap-4 pb-24`}
+        style={style}
+        className={`shadow-2xl rounded-3xl mx-0 md:mx-16 justify-center h-[1000px] md:h-auto overflow-auto md:overflow-none md:flex md:flex-wrap gap-4 pb-24`}
       >
         {listItems}
       </div>
-
-      <div className=" hidden">
+      <div className="hidden">
         <svg
           className="fill-slate-800"
           data-name="Layer 1"
