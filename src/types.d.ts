@@ -1,8 +1,5 @@
 //Page
-export interface Navbar {
-  title: String;
-  rgb: RGB;
-}
+
 
 //Layout
 export interface Layout {
@@ -23,12 +20,14 @@ export interface Link {
 }
 
 export interface Skill {
-  skillBullet: SkillBullet;
+  skillName: String;
+  skillType: Number;
 }
 
 export interface SkillBullet {
   skillName: String;
   skillType: Number;
+  _key: string;
 }
 
 //Hero
@@ -53,12 +52,20 @@ export interface Component {
 }
 
 export interface Card {
-  title: String;
-  url: String;
+  title: string;
+  url: string;
+  description: string;
+  update: DateTime;
+}
+
+export interface DateTime {
+  type: String;
+  name: String;
 }
 
 export interface Skills {
-  name: String;
+  title: String;
+  skillItems: SkillBullet[];
 }
 export interface Contact {
   contactIcon: {
