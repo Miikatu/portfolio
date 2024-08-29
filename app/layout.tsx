@@ -41,6 +41,16 @@ const CONTENT_QUERY = `
   }
 }
 `;
+const COMPONENT_QUERY = `  
+*[_type=="component"]{
+  skills,
+  cards[]{
+    title,
+    "url": thumbnail.asset->url
+  }
+}
+`;
+
 const STYLE_QUERY = `
 *[_type=="style"]{
   theme
@@ -55,12 +65,15 @@ export default async function RootLayout({
 }>) {
   const style = await sanityClient.fetch(STYLE_QUERY);
   const layout = await sanityClient.fetch(CONTENT_QUERY);
+  const components = await sanityClient.fetch(COMPONENT_QUERY);
 
   const { navbar, hero, footer } = layout[0];
   const { theme } = style[0];
+    const { skills, cards } = components[0];
+
   return (
-    <html lang="en">
-      <body>
+    <html  lang="en">
+      <body className={`scroll-smooth bg-[#f0f1fa] font-mono`}>
         <Navbar  {...navbar} />
         <main>{children}</main>
         <Footer footer={footer} theme={theme} />

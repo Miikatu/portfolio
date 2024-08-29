@@ -20,9 +20,9 @@ export default function Navbar(navbar: Navbar) {
                   </span>
                 </div>
                 <div className="mr-auto flex flex-wrap my-auto md:space-x-5 lg:space-x-14">
-                  {/*navbar.links.map((link: any) => (
+                  {navbar.links.map((link: any) => (
                     <NavButton target="" field={link.text} />
-                  ))*/}
+                  ))}
                 </div>
               </div>
             </div>
