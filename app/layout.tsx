@@ -69,10 +69,10 @@ export default async function RootLayout({
 
   const { navbar, hero, footer } = layout[0];
   const { theme } = style[0];
-    const { skills, cards } = components[0];
+  const { skills, cards } = components[0];
 
   return (
-    <html  lang="en">
+    <html className="scroll-smooth" lang="en">
       <body className={`scroll-smooth bg-[#f0f1fa] font-mono`}>
         <Navbar  {...navbar} />
         <main>{children}</main>

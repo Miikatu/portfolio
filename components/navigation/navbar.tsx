@@ -21,7 +21,7 @@ export default function Navbar(navbar: Navbar) {
                 </div>
                 <div className="mr-auto flex flex-wrap my-auto md:space-x-5 lg:space-x-14">
                   {navbar.links.map((link: any) => (
-                    <NavButton target="" field={link.text} />
+                    <NavButton target={link.href} field={link.text} />
                   ))}
                 </div>
               </div>

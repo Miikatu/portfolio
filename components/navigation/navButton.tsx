@@ -5,7 +5,7 @@ export default function navButton(props: { target: string; field: string }) {
          bg-rounded
 		 text-black 
          bg-clip-bprder border-8 border-transparent rounded-2xl"
-      href={"/#" + props.target}
+      href={ props.target}
     >
       {props.field}
     </a>
