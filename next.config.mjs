@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {images: {
-  domains: ['cdn.sanity.io/images'],
-},};
+const nextConfig = {
+  output: "export",
+  images: { unoptimized: true },
+  assetPrefix: "./",
+};
 
-// next.config.mjs
-export default {
-    reactStrictMode: true,
-  };
-  
+export default nextConfig;
