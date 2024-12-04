@@ -4,11 +4,8 @@ import Footer from "./components/navigation/footer";
 import Welcome from "./components/content/welcome";
 import Skills from "./components/content/skills";
 import CardContainer from "./components/content/cardContainer";
-import { getLayout } from "@/sanity/client";
-import { getContent } from "@/sanity/client";
 import { SanityDocument } from "next-sanity";
 import { sanityFetch } from "@/sanity/client";
-import Link from "next/link";
 
 import type { Layout, Component, Footer as FooterType } from "@/types";
 export const metadata = {
@@ -52,7 +49,6 @@ const STYLE_QUERY = `
   theme
 }
 `;
-
 
 const programming = ["Java", "Python", "C++", "C"];
 const frontEnd = ["React", "Vue", "Tailwind"];
