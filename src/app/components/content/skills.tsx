@@ -2,14 +2,15 @@ import type { Component, Skills } from "@/types";
 
 export default function skills(props: { skills: Skills }) {
   const skills = props.skills;
-  console.log("**: ", props.skills);
+
   const listItems =
     skills.skillItems.map((skill, i: number) => {
       return (
-        <div key={skill._key} className={`flex flex-wrap gap animate-[hop_1s_ease-in-out]`}>
-          <div
-            className={`flex bg-[#e6e8f1] py-4 px-2 rounded-3xl my-5 mr-5  text-blue-950 text-md`}
-          >
+        <div
+          key={skill._key}
+          className={`flex flex-wrap gap animate-[hop_1s_ease-in-out] `}
+        >
+          <div className={`flex  py-4 px-2 my-5 mr-5  text-blue-950 text-md`}>
             {skill.skillName || "Error"}
           </div>
         </div>

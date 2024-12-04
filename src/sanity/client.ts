@@ -1,4 +1,5 @@
-import { createClient, type ClientConfig } from "@sanity/client";
+import { WishItem, WishList } from "@/types";
+import { createClient, SanityDocument, type ClientConfig } from "@sanity/client";
 import { type QueryParams } from "next-sanity";
 export const client = createClient({
   projectId: "qrx5zve1",
@@ -52,6 +53,21 @@ export async function getAll() {
     console.log("Error ", error);
     return 1;
   }
+}
+export async function getWishList() {
+  const WISHLIST_QUERY = `  
+  *[_type == "wishItem"]{
+  _id,
+  name,
+  description,
+  "imageUrl": image.asset->url,
+  productLink
+}
+  `;
+
+  const data = await sanityFetch<WishItem[]>({ query: WISHLIST_QUERY });
+  console.log("Fetched Data: ", data);
+  return data;
 }
 
 export async function sanityFetch<QueryResponse>({

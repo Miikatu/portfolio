@@ -1,5 +1,5 @@
 import Image from "next/image";
-export default function ImageFrame(props: any) {
+export default function   ImageFrame(props: any) {
   //"/../../assets/pictures/blueprint_blue.png"
   return (
     <div

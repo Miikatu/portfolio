@@ -13,7 +13,8 @@ module.exports = {
         blob: "blob 7s infinite",
         bubble: "bubble 1s infinite",
         shine: "shine 3s infinite",
-        hop: "hop 1s ease-in-out"
+        hop: "hop 1s ease-in-out",
+        snowfall: 'snowfall 5s linear infinite',
       },
       keyframes: {
         blob: {
@@ -63,9 +64,14 @@ module.exports = {
             transform: "translateX(0%) skewY(4deg) scale(1.05);",
             
           },
-        }
+          
+        },
+        snowfall: {
+          '0%': { transform: 'translateY(-10%)' },
+          '100%': { transform: 'translateY(100vh)' },
+        },
       },
-    
+
 
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -103,7 +109,8 @@ module.exports = {
         'all-xl': '0 0 25px -5px rgba(0, 0, 0, 0.1), 0 0 10px -5px rgba(0, 0, 0, 0.04)',
         'all-2xl': '0 0 50px -12px rgba(0, 0, 0, 0.25)',
         'all-3xl': '0 0 60px -15px rgba(0, 0, 0, 0.3)'
-      }
+      },
+
     },
   },
   plugins: [],

@@ -53,6 +53,7 @@ const STYLE_QUERY = `
 }
 `;
 
+
 const programming = ["Java", "Python", "C++", "C"];
 const frontEnd = ["React", "Vue", "Tailwind"];
 const database = ["SQL", "MySQL", "MongoDB"];

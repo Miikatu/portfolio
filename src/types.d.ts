@@ -1,6 +1,5 @@
 //Page
 
-
 //Layout
 export interface Layout {
   navbar: Navbar;
@@ -104,4 +103,16 @@ export interface Theme {
 }
 export interface ThemeList {
   paltetteLabel: String;
+}
+
+export interface WishList {
+  items: WishItem[];
+}
+
+export interface WishItem {
+  _id: String;
+  name: String;
+  description: String;
+  imageUrl: String;
+  productLink: String;
 }
