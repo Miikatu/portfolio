@@ -20,7 +20,6 @@ export async function getCount() {
     //console.log("Count of documents:", count);
     return count;
   } catch (error) {
-    console.log("Error ", error);
     return 1;
   }
 }
@@ -66,7 +65,6 @@ export async function getWishList() {
   `;
 
   const data = await sanityFetch<WishItem[]>({ query: WISHLIST_QUERY });
-  console.log("Fetched Data: ", data);
   return data;
 }
 

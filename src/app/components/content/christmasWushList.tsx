@@ -32,7 +32,7 @@ export default function ChristmasWishlist(props: {wishList:WishItem[]}){
       <main className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {props.wishList.map((item) => (
-            <WishlistItem key={item._id} item={item} />
+            <WishlistItem key={String(item._id)} item={item} />
           ))}
         </div>
       </main>
@@ -42,14 +42,14 @@ export default function ChristmasWishlist(props: {wishList:WishItem[]}){
     </div>
   )
 }
-function WishlistItem({ item }: { item: WishlistItem }) {
+function WishlistItem({ item }: { item: WishItem }) {
   return (
     <div className="bg-white text-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 flex flex-col h-full">
       <div className="relative pt-[75%] overflow-hidden">
         <img
           className="pt-5 absolute inset-0 w-full max-h-64 object-contain"
-          src={item.imageUrl}
-          alt={item.name}
+          src={String(item.imageUrl)}
+          alt={String(item.name)}
         />
       </div>
       <div className="p-6 flex-grow flex flex-col justify-between">
@@ -59,7 +59,7 @@ function WishlistItem({ item }: { item: WishlistItem }) {
         </div>
         {item.productLink && (
           <a
-            href={item.productLink}
+            href={String(item.productLink)}
             className="inline-block bg-green-500 text-white rounded-full px-4 py-2 font-semibold hover:bg-green-600 transition-colors duration-300 text-center"
           >
             Näytä verkkokaupassa <SquareArrowOutUpRight className="inline-block ml-1" />
