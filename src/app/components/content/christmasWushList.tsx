@@ -1,12 +1,8 @@
-
-import { SanityDocument } from "next-sanity";
-import { getWishList, sanityFetch } from "@/sanity/client";
-import { WishItem, WishList } from "@/types";
-import { GetServerSideProps, GetStaticProps } from "next";
+import { WishItem } from "@/src/types";
 import { Bell, Gift, Snowflake, SquareArrowOutUpRight } from 'lucide-react';
+import Image from 'next/image'
 import "@/app/globals.css";
 import { useState } from "react";
-
 
 
 export default function ChristmasWishlist(props: {wishList:WishItem[]}){
@@ -16,14 +12,14 @@ export default function ChristmasWishlist(props: {wishList:WishItem[]}){
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-700 to-green-700 text-white">
       {isSnowing && <Snowfall />}
-      <header className="py-6 px-4 text-center">
-        <h1 className="text-4xl font-bold mb-2 flex items-center justify-center">
-          <Gift className="mr-2" /> 2024<Gift className="ml-2" />
+      <header className="py-12 px-4 text-center bg-white  shadow-md">
+        <h1 className="text-4xl font-bold mb-4 text-red-700 flex items-center justify-center">
+          <Gift className="mr-2" /> My Christmas Wishlist <Gift className="ml-2" />
         </h1>
-        <p className="text-xl">joo</p>
+        <p className="text-xl text-gray-700 mb-6">Curated selection of holiday dreams</p>
         <button
           onClick={toggleSnow}
-          className="mt-4 bg-white text-red-700 px-4 py-2 rounded-full hover:bg-red-100 transition-colors duration-300"
+          className="mt-4 bg-red-700 bg-opacity-10  text-red-700 px-4 py-2 rounded-full hover:bg-red-100 transition-colors duration-300"
         >
           <Snowflake className="inline-block mr-2" />
           {isSnowing ? 'Lopeta heti' : 'Lumisadetta'}
@@ -32,7 +28,7 @@ export default function ChristmasWishlist(props: {wishList:WishItem[]}){
       <main className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {props.wishList.map((item) => (
-            <WishlistItem key={item._id} item={item} />
+            <WishlistItem key={String(item._id)} item={item} />
           ))}
         </div>
       </main>
@@ -42,14 +38,17 @@ export default function ChristmasWishlist(props: {wishList:WishItem[]}){
     </div>
   )
 }
-function WishlistItem({ item }: { item: WishlistItem }) {
+
+function WishlistItem({ item }: { item: WishItem }) {
   return (
     <div className="bg-white text-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 flex flex-col h-full">
-      <div className="relative pt-[75%] overflow-hidden">
-        <img
-          className="pt-5 absolute inset-0 w-full max-h-64 object-contain"
-          src={item.imageUrl}
-          alt={item.name}
+      <div className="relative w-full h-64">
+        <Image
+          src={String(item.imageUrl)}
+          alt={String(item.name)}
+          layout="fill"
+          objectFit="contain"
+          className="p-4"
         />
       </div>
       <div className="p-6 flex-grow flex flex-col justify-between">
@@ -59,17 +58,16 @@ function WishlistItem({ item }: { item: WishlistItem }) {
         </div>
         {item.productLink && (
           <a
-            href={item.productLink}
+            href={String(item.productLink)}
             className="inline-block bg-green-500 text-white rounded-full px-4 py-2 font-semibold hover:bg-green-600 transition-colors duration-300 text-center"
           >
-            Näytä verkkokaupassa <SquareArrowOutUpRight className="inline-block ml-1" />
+            View Product <Bell className="inline-block ml-1" />
           </a>
         )}
       </div>
     </div>
   )
 }
-
 
 function Snowfall() {
   return (

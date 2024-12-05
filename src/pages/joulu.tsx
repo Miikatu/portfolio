@@ -1,7 +1,7 @@
-import { WishItem } from '@/types';
-import ChristmasWishlist from '@/app/components/content/christmasWushList';
+import { WishItem } from '../types';
+import ChristmasWishlist from '../app/components/content/christmasWushList';
 import { GetStaticProps } from 'next';
-import { getWishList } from '@/sanity/client';
+import { getWishList } from '../sanity/client';
 
 export default function Joulu(props: {wishList:WishItem[]}) {
   return (

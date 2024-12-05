@@ -4,11 +4,9 @@ import Footer from "./components/navigation/footer";
 import Welcome from "./components/content/welcome";
 import Skills from "./components/content/skills";
 import CardContainer from "./components/content/cardContainer";
-import { getLayout } from "@/sanity/client";
-import { getContent } from "@/sanity/client";
 import { SanityDocument } from "next-sanity";
-import { sanityFetch } from "@/sanity/client";
-import Link from "next/link";
+import { getComponent, getLayout, getStyle } from "../sanity/client";
+import client from "@sanity/client";
 
 import type { Layout, Component, Footer as FooterType } from "@/types";
 export const metadata = {
@@ -16,6 +14,7 @@ export const metadata = {
   // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
   title: "Miikatti.js",
 };
+
 const CONTENT_QUERY = `  
 *[_type=="layout"]{
   navbar,
@@ -37,6 +36,7 @@ const CONTENT_QUERY = `
   }
 }
 `;
+
 const COMPONENT_QUERY = `  
 *[_type=="component"]{
   skills,
@@ -53,7 +53,6 @@ const STYLE_QUERY = `
 }
 `;
 
-
 const programming = ["Java", "Python", "C++", "C"];
 const frontEnd = ["React", "Vue", "Tailwind"];
 const database = ["SQL", "MySQL", "MongoDB"];
@@ -62,12 +61,10 @@ const software = ["Power Bi", "Microsoft 365", "LibreOffice"];
 //const skills = [programming, frontEnd, database, software];
 
 export default async function RootLayout() {
-  const layout = await sanityFetch<Layout[]>({ query: CONTENT_QUERY });
-  const style = await sanityFetch<SanityDocument[]>({ query: STYLE_QUERY });
-  const components = await sanityFetch<Component[]>({
-    query: COMPONENT_QUERY,
-  });
-
+  const layout = await getLayout();
+  const style = await getStyle();
+  const components = await getComponent();
+  
   const { navbar, hero, footer } = layout[0];
   const { theme } = style[0];
   const { skills, cards } = components[0];
