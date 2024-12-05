@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps = async () => {
     if (!wishlist) {
       throw new Error('No items found');  
 
-    } return { props: { wishList:wishlist } };
+    } return { props: { wishList:wishlist }, revalidate: 10 };
   } catch (error) {
     return { props: { wishlist: [], error} };
   }
